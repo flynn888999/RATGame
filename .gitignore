@@ -44,3 +44,5 @@ Temporary Items
 # User ignore
 Library
 Temp
+.sln
+.csproj
