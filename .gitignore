@@ -46,3 +46,6 @@ Library
 Temp
 .sln
 .csproj
+UnityVS
+obj
+.cd
