@@ -16,7 +16,8 @@ public sealed class WindowConfig
     public static Dictionary<System.Type, string> WindowBind = new Dictionary<System.Type, string>
     {
         //  脚本 (绑定)=> 预制
-        {typeof(LoginWin), "Window/Login/LoginWidget"},
+        {typeof(LoginWin), "UIWindow/Login/LoginWidget"},
+
     };
 
 
