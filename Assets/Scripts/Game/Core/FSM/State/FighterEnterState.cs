@@ -33,9 +33,19 @@ namespace FSM
         private void OnEnterBattle( string sceneName)
         {
             GameObject scene = GameObject.Instantiate(AssetManager.LoadResources<GameObject>("SceneModel/Scene_1"));
-            GameObject player = GameObject.Instantiate(AssetManager.LoadResources<GameObject>("PersonModel/Model_Ez"));
+            GameObject player = GameObject.Instantiate(AssetManager.LoadResources<GameObject>("PersonModel/Player_Ez"));
             player.transform.parent = GameObject.Find("Origin").transform;
             player.transform.localPosition = Vector2.zero;
+
+
+            //  加入临时数据中心
+            SpiritObjBehaviour spirit = player.GetComponent<SpiritObjBehaviour>();
+            BattlerDataManager.Instance.AddSpirit(spirit);
+
+            //  显示UI
+            UIManager.ShowWidget<BattleWin>();
+
+            ControllerManager.Get<BattleController>().ViewProxy.SetController(spirit as PlayerEntity);
 
             Debug.Log(scene.name);
         }

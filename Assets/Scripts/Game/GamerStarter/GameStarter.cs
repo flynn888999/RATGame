@@ -67,5 +67,6 @@ public class GameStarter : MonoBehaviour
     private void RegistAllController()
     {
         ControllerManager.Regist(new LoginController());
+        ControllerManager.Regist(new BattleController());
     }
 }

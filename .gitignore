@@ -48,4 +48,4 @@ Temp
 .csproj
 UnityVS
 obj
-.cd
+*.cd

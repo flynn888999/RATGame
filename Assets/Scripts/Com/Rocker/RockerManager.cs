@@ -109,10 +109,10 @@ namespace CxlRocker
 					rockerIcon.offset = Vector3.zero;
 
 					//	立即派发移动事件
-					eventData.normalOffset = rockerIcon.GetNormalOffset( offsetMaxLenth);
-					DistributedMoveEvent();
+                    eventData.normalOffset = rockerIcon.GetNormalOffset(offsetMaxLenth);
+                    DistributedMoveEvent();
 
-					mIsStartMove = true;
+                    mIsStartMove = true;
 				}
 				else if ( trans.name.Equals(iconName))
 				{
@@ -151,7 +151,7 @@ namespace CxlRocker
 				rockerBackGround.SetScreenMousePosition();
 
 				//	同时派发摇杆按下事件
-				OnChildPress( rockerIcon.trans, true);
+                OnChildPress(rockerIcon.trans, true);
 			}
 			else
 			{
@@ -161,8 +161,12 @@ namespace CxlRocker
 			}
 		}
 
-		private void OnDrag()
+        private void OnDrag(Vector2 delta)
 		{
+            if (delta == Vector2.zero)
+                return;
+
+            //Debug.Log("距离 " + delta.ToString());
 			OnChildDrag( rockerIcon.trans);
 		}
 

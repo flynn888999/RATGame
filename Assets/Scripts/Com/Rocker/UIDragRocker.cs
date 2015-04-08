@@ -45,6 +45,9 @@ namespace CxlRocker
 
 		void OnDrag( Vector2 delta)
 		{
+            if (delta == Vector2.zero)
+                return;
+            //Debug.Log("距离 " + delta.ToString());
 			if ( Activate())
 			{
 				rocker.OnChildDrag(mTrans);

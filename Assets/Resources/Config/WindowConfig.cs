@@ -17,7 +17,7 @@ public sealed class WindowConfig
     {
         //  脚本 (绑定)=> 预制
         {typeof(LoginWin), "UIWindow/Login/LoginWidget"},
-
+        {typeof(BattleWin), "UIWindow/Battle/BattleWidget"},
     };
 
 
